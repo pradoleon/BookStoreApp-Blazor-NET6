@@ -28,7 +28,8 @@ namespace BookStoreApp.API.Controllers
         {
             try
             {
-                var authorsDto = _mapper.Map<IEnumerable<AuthorReadOnlyDto>>(await _context.Authors.ToListAsync());
+                var authors = await _context.Authors.ToListAsync();
+                var authorsDto = _mapper.Map<IEnumerable<AuthorReadOnlyDto>>(authors);
                 return Ok(authorsDto);
             }
             catch (Exception ex)
