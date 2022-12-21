@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace BookStoreApp.API.Models.Book
+﻿namespace BookStoreApp.API.Models.Book
 {
     public class BookDetailsDto : BaseDto
     {
