@@ -78,10 +78,10 @@ namespace BookStoreApp.API.Controllers
                 string tokenString = await GenerateToke(user);
 
                 var response = new AuthResponse
-                { 
+                {
                     Email = userDto.Email,
                     Token = tokenString,
-                    UserId = user.Id                
+                    UserId = user.Id
                 };
 
                 return response;
@@ -114,11 +114,11 @@ namespace BookStoreApp.API.Controllers
             .Union(roleClaims);
 
             var token = new JwtSecurityToken(
-                issuer : _configuration["JwtSettings:Issuer"],
-                audience : _configuration["JwtSettings:Audience"],
-                claims : claims,
+                issuer: _configuration["JwtSettings:Issuer"],
+                audience: _configuration["JwtSettings:Audience"],
+                claims: claims,
                 expires: DateTime.UtcNow.AddHours(Convert.ToInt32(_configuration["JwtSettings:Duration"])),
-                signingCredentials : credentials
+                signingCredentials: credentials
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);

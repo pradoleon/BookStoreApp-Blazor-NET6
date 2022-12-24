@@ -74,8 +74,8 @@ public partial class BookStoreDbContext : IdentityDbContext<ApiUser>
                 Id = "0f555948-6eec-4c52-aaee-3b8cca367b78",
                 Email = "admin@bookstore.com",
                 NormalizedEmail = "ADMIN@BOOKSTORE.COM",
-                UserName= "admin@bookstore.com",
-                NormalizedUserName= "ADMIN@BOOKSTORE.COM",
+                UserName = "admin@bookstore.com",
+                NormalizedUserName = "ADMIN@BOOKSTORE.COM",
                 FirstName = "System",
                 LastName = "Admin",
                 PasswordHash = hasher.HashPassword(null, "P@ssword1")
